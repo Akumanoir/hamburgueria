@@ -1,4 +1,5 @@
 import { Store, MenuSquare, ShoppingCart, Info } from "lucide-react";
+import { Outlet, Link } from "react-router-dom"
 
 export default function App() {
 
@@ -18,22 +19,30 @@ export default function App() {
         <nav>
           <ul className="flex gap-3 items-end h-full">
             <li className="cursor-pointer" title="Início">
-              <Store />
+              <Link to={`/`}>
+                <Store />
+              </Link>
             </li>
             <li className="cursor-pointer" title="Cardápio">
-              <MenuSquare />
+              <Link to={`menu`}>
+                <MenuSquare />
+              </Link>
             </li>
             <li className="cursor-pointer" title="Carrinho">
-              <ShoppingCart />
+              <Link to={ `ShoppingCart` }>
+                <ShoppingCart />
+              </Link>
             </li>
             <li className="cursor-pointer" title="Sobre nós">
-              <Info />
+              <Link to={ `Info` }>
+                <Info />
+              </Link>
             </li>
           </ul>
         </nav>
       </header>
       <main>
-        <h1>Inicio</h1>
+        <Outlet />
       </main>
     </>
   );
