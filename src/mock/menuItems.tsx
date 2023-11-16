@@ -1,5 +1,6 @@
 export const menuItems = [
   {
+    id: 1,
     name: "Hambúrguer de grão-de-bico e beterraba",
     type: "hamburguer",
     ingredients: [
@@ -15,6 +16,7 @@ export const menuItems = [
     value: 14.99,
   },
   {
+    id: 2,
     name: "Hambúrguer de pinhão",
     type: "hamburguer",
     ingredients: [
@@ -28,6 +30,7 @@ export const menuItems = [
     value: 19.99,
   },
   {
+    id: 3,
     name: "Hambúrguer de feijão preto",
     type: "hamburguer",
     ingredients: [
@@ -42,6 +45,7 @@ export const menuItems = [
     value: 10.99,
   },
   {
+    id: 4,
     name: " Hambúrguer de feijão com Beterraba ",
     type: "hamburguer",
     ingredients: [
@@ -56,6 +60,7 @@ export const menuItems = [
     value: 19.99,
   },
   {
+    id: 5,
     name: "Hambúrguer de grão-de-bico com molho de curry verde",
     type: "hamburguer",
     ingredients: [
@@ -71,6 +76,7 @@ export const menuItems = [
     value: 19.99,
   },
   {
+    id: 6,
     name: "Hambúrguer de palmito",
     type: "hamburguer",
     ingredients: [

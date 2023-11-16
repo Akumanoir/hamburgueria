@@ -1,15 +1,20 @@
 import { Store, MenuSquare, ShoppingCart, Info } from "lucide-react";
 import { Outlet, Link } from "react-router-dom"
 
+// export async function loader() {
+//   const items = itemsClass.getItems;
+//   return { items };
+// }
+
 export default function App() {
 
   return (
     <>
-      <header className="p-3 flex justify-between">
-        <div className="flex items-end gap-2">
+      <header className="px-3 py-5 flex justify-between border-b-2 border-gray-200">
+        <div className="flex items-center gap-2">
           <div className="w-14">
             <img
-              src="hamburguer-icon.png"
+              src="/icon.png"
               alt="Ícone de um hamburguer"
               className="object-cover w-full"
             />
@@ -17,7 +22,7 @@ export default function App() {
           <h1 className="font-bold">Hamburgueria vegana</h1>
         </div>
         <nav>
-          <ul className="flex gap-3 items-end h-full">
+          <ul className="flex gap-3 items-center h-full">
             <li className="cursor-pointer" title="Início">
               <Link to={`/`}>
                 <Store />
