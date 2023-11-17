@@ -1,14 +1,15 @@
 import { useLoaderData, Link } from "react-router-dom";
-import { itemsClass } from "../mock/items";
+import { itemsClass } from "../mock/itemsController";
 import { XCircle } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ConfirmButton } from "../components/ConfirmButton";
 
 export function Loader({ params }: any) {
   let item = itemsClass.getOneItem(params.id);
   return { item };
 }
 
-export function ItemModal() {
+export function ItemPage() {
   const { item }: any = useLoaderData();
 
   const [width, setWidth] = useState(window.innerWidth);
@@ -23,7 +24,7 @@ export function ItemModal() {
   });
 
   return (
-    <section className="max-w-3xl m-auto">
+    <section key={item.id} className="max-w-3xl m-auto">
       <div>
         <div className="relative w-full">
           {width < 835 && (
@@ -59,20 +60,25 @@ export function ItemModal() {
           <p>{item.description}</p>
           {item.ingredients.length ? (
             <ul className="list-disc list-inside">
-              {item.ingredients.map((ingredients: string) => (
-                <li>{ingredients}</li>
+              {item.ingredients.map((ingredients: string, position: number) => (
+                <li key={position}>{ingredients}</li>
               ))}
             </ul>
           ) : (
             <p>Não disponível</p>
           )}
           <strong className="block">R${item.value}</strong>
-          <button
-            type="button"
-            className="w-full border p-5 hover:bg-green-400 hover:text-white transition duration-200"
-          >
-            Adicionar ao carrinho
-          </button>
+          <ConfirmButton
+            text="Adicionar ao carrinho"
+            onAction={() =>
+              itemsClass.createShoppingCart(
+                item.id,
+                item.image,
+                item.name,
+                item.value
+              )
+            }
+          />
         </div>
       </div>
     </section>

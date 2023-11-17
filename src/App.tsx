@@ -34,12 +34,12 @@ export default function App() {
               </Link>
             </li>
             <li className="cursor-pointer" title="Carrinho">
-              <Link to={ `ShoppingCart` }>
+              <Link to={`ShoppingCart`}>
                 <ShoppingCart />
               </Link>
             </li>
             <li className="cursor-pointer" title="Sobre nós">
-              <Link to={ `Info` }>
+              <Link to={`Info`}>
                 <Info />
               </Link>
             </li>
