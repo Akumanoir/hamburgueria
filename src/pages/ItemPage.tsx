@@ -24,7 +24,7 @@ export function ItemPage() {
   });
 
   return (
-    <section key={item.id} className="max-w-3xl m-auto">
+    <main key={item.id} className="max-w-3xl m-auto">
       <div>
         <div className="relative w-full">
           {width < 835 && (
@@ -81,6 +81,6 @@ export function ItemPage() {
           />
         </div>
       </div>
-    </section>
+    </main>
   );
 }

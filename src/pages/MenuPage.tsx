@@ -14,7 +14,7 @@ export function MenuPage() {
   console.log(itemsClass.getOneItem(1))
   
   return (
-    <section className="max-w-3xl m-auto">
+    <main className="max-w-3xl m-auto">
       <div className="p-3">
         <h2>Cardápio</h2>
       </div>
@@ -47,6 +47,6 @@ export function MenuPage() {
           <p>Desculpe, não temos nada disponível!</p>
         )}
       </div>
-    </section>
+    </main>
   );
 }

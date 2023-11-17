@@ -46,9 +46,7 @@ export default function App() {
           </ul>
         </nav>
       </header>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </>
   );
 }

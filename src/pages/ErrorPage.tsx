@@ -6,12 +6,12 @@ export function ErrorPage() {
   console.log(error);
 
   return (
-    <div>
+    <main>
       <h1>Opa!</h1>
       <p>Desculpe, um erro inexperado aconteceu</p>
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
-    </div>
+    </main>
   )
 }

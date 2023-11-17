@@ -25,7 +25,7 @@ export function ShoppingCartPage() {
   return (
     <>
       {items.length ? (
-        <section className="max-w-3xl m-auto relative">
+        <main className="max-w-3xl m-auto relative">
           <div className="p-3">
             <h2>Carrinho</h2>
           </div>
@@ -58,9 +58,9 @@ export function ShoppingCartPage() {
             </p>
             <ConfirmButton text="Efetuar Compra" />
           </div>
-        </section>
+        </main>
       ) : (
-        <section className="max-w-3xl m-auto grid place-content-center h-96 text-center">
+        <main className="max-w-3xl m-auto grid place-content-center h-96 text-center">
           <iframe
             src="https://giphy.com/embed/dcVfvQSQi3nYk"
             width="100%"
@@ -69,7 +69,7 @@ export function ShoppingCartPage() {
             allowFullScreen
           ></iframe>
           <p>Não há itens no carrinho</p>
-        </section>
+        </main>
       )}
     </>
   );
