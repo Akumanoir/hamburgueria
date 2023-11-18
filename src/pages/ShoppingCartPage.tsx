@@ -97,7 +97,10 @@ export function ShoppingCartPage() {
             <p className="p-1">
               Total: <strong>R${itemsClass.getTotalValue()}</strong>
             </p>
-            <ConfirmButton text="Efetuar Compra" />
+            <ConfirmButton
+              text="Efetuar Compra"
+              className="text-green-400 border-green-400"
+            />
           </div>
         </main>
       ) : (
