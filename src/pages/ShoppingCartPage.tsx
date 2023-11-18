@@ -9,14 +9,14 @@ export function Loader() {
   return { shopCart };
 }
 
-
 function minimalHeight(height: number, width: number) {
   if (height <= 500) {
+    console.log(window.innerHeight);
     return { height: `calc(500px - 6.125rem)` };
-  } else if(width < 825) {
-    return { height: `calc(${height}px - 6.125rem)` };
+  } else if (width < 825) {
+    return { height: "calc(100dvh - 6.125rem)" };
   } else {
-    return { maxHeight: `calc(${height}px - 6.125rem)` };
+    return { maxHeight: "calc(100dvh - 6.125rem)" };
   }
 }
 
@@ -25,7 +25,7 @@ export function ShoppingCartPage() {
   const [items, setItems] = useState(shopCart);
   const [height, setHeight] = useState(window.innerHeight);
   const [width, setWidth] = useState(window.innerWidth);
-  console.count("renderizou: ")
+  console.count("renderizou: ");
 
   const deleteItemFromCartList = (id: number) => {
     const index = items.findIndex((item: { id: number }) => item.id === id);
@@ -35,8 +35,23 @@ export function ShoppingCartPage() {
 
   const updateHeightandWidth = () => {
     setHeight(window.innerHeight);
-    setWidth(window.innerWidth)
+    setWidth(window.innerWidth);
   };
+
+  //  tentei mudar a quantidade de render. funcionou... mas somente quando a página é carregada pela primeira vez
+
+  // const mainHeight = (document.body.onresize = () => {
+  //   if (window.innerHeight <= 500) {
+  //     console.log(window.innerHeight);
+  //     return { height: `calc(500px - 6.125rem)` };
+  //   } else if (window.innerWidth < 825) {
+  //     return { height: "calc(100dvh - 6.125rem)" };
+  //   } else {
+  //     return { maxHeight: "calc(100dvh - 6.125rem)" };
+  //   }
+  // });
+
+  // console.log(mainHeight())
 
   useEffect(() => {
     window.addEventListener("resize", updateHeightandWidth);
