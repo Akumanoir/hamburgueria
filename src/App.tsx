@@ -14,7 +14,7 @@ export default function App() {
         <div className="flex items-center gap-2">
           <div className="w-14">
             <img
-              src="/icon.png"
+              src="/lanchonete-hamburgueria/icon.png"
               alt="Ícone de um hamburguer"
               className="object-cover w-full"
             />
