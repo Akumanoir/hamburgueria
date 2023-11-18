@@ -11,26 +11,26 @@ import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/lanchonete-hamburgueria",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: "/lanchonete-hamburgueria",
         element: <HomePage />,
       },
       {
-        path: "menu",
+        path: "/lanchonete-hamburgueria/menu",
         element: <MenuPage />,
         loader: menuLoader,
       },
       {
-        path: "/menu/:id",
+        path: "/lanchonete-hamburgueria//menu/:id",
         element: <ItemPage />,
         loader: itemLoader,
       },
       {
-        path: "ShoppingCart",
+        path: "/lanchonete-hamburgueria/ShoppingCart",
         element: <ShoppingCartPage />,
         loader: shoppingCartLoader,
       },

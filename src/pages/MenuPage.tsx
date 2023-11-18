@@ -30,7 +30,10 @@ export function MenuPage() {
                 },
                 index: number
               ) => (
-                <Link to={`/menu/${items.id}`} key={index}>
+                <Link
+                  to={`/lanchonete-hamburgueria/menu/${items.id}`}
+                  key={index}
+                >
                   <MenuButton
                     className="hover:border-green-400"
                     id={items.id}
