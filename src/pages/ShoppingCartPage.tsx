@@ -2,34 +2,60 @@ import { itemsClass } from "../mock/itemsController";
 import { useLoaderData } from "react-router-dom";
 import { MenuButton } from "../components/MenuButton";
 import { ConfirmButton } from "../components/ConfirmButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Loader() {
   let shopCart = itemsClass.getShoppingCart();
   return { shopCart };
 }
 
+
+function minimalHeight(height: number, width: number) {
+  if (height <= 500) {
+    return { height: `calc(500px - 6.125rem)` };
+  } else if(width < 825) {
+    return { height: `calc(${height}px - 6.125rem)` };
+  } else {
+    return { maxHeight: `calc(${height}px - 6.125rem)` };
+  }
+}
+
 export function ShoppingCartPage() {
   const { shopCart }: any = useLoaderData();
   const [items, setItems] = useState(shopCart);
+  const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth] = useState(window.innerWidth);
+  console.count("renderizou: ")
 
-  const deleteItem = (id: number) => {
+  const deleteItemFromCartList = (id: number) => {
     const index = items.findIndex((item: { id: number }) => item.id === id);
     let removedItems = itemsClass.removeItemFromCart(index).slice();
     setItems(removedItems);
   };
 
-  console.log(items);
-  // console.log(shopCart);
+  const updateHeightandWidth = () => {
+    setHeight(window.innerHeight);
+    setWidth(window.innerWidth)
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateHeightandWidth);
+    return () => window.removeEventListener("resize", updateHeightandWidth);
+  });
+
+  let mainHeight = minimalHeight(height, width);
 
   return (
     <>
       {items.length ? (
-        <main className="max-w-3xl m-auto relative">
+        <main
+          className="max-w-3xl m-auto flex flex-col scroll-smooth"
+          style={mainHeight}
+        >
           <div className="p-3">
             <h2>Carrinho</h2>
           </div>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 flex-grow overflow-y-auto">
             {items.map(
               (
                 item: {
@@ -47,12 +73,12 @@ export function ShoppingCartPage() {
                   name={item.name}
                   value={item.value}
                   shoppingCart
-                  onAction={() => deleteItem(item.id)}
+                  onAction={() => deleteItemFromCartList(item.id)}
                 />
               )
             )}
           </div>
-          <div className="p-3 grid gap-2 w-full bg-white sticky bottom-0">
+          <div className="p-3 grid gap-2">
             <p className="p-1">
               Total: <strong>R${itemsClass.getTotalValue()}</strong>
             </p>

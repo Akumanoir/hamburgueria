@@ -41,7 +41,7 @@ export function ItemPage() {
             className="object-cover w-full h-full"
           />
         </div>
-        <div className="p-3 grid gap-3">
+        <section className="p-3 grid gap-3">
           <div className="flex justify-between">
             <div className="">
               <h2 className="font-bold text-lg">{item.name}</h2>
@@ -67,19 +67,21 @@ export function ItemPage() {
           ) : (
             <p>Não disponível</p>
           )}
-          <strong className="block">R${item.value}</strong>
-          <ConfirmButton
-            text="Adicionar ao carrinho"
-            onAction={() =>
-              itemsClass.createShoppingCart(
-                item.id,
-                item.image,
-                item.name,
-                item.value
-              )
-            }
-          />
-        </div>
+          <div className="grid gap-3">
+            <strong className="block">R${item.value}</strong>
+            <ConfirmButton
+              text="Adicionar ao carrinho"
+              onAction={() =>
+                itemsClass.createShoppingCart(
+                  item.id,
+                  item.image,
+                  item.name,
+                  item.value
+                )
+              }
+            />
+          </div>
+        </section>
       </div>
     </main>
   );

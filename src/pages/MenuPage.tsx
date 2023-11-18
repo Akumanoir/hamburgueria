@@ -11,7 +11,6 @@ export function Loader() {
 
 export function MenuPage() {
   const { menuItems }: any = useLoaderData();
-  console.log(itemsClass.getOneItem(1))
   
   return (
     <main className="max-w-3xl m-auto">
