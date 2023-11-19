@@ -38,7 +38,7 @@ export function ItemPage() {
       <section className="relative w-full">
         {width < 835 && (
           <Link
-            to={`/lanchonete-hamburgueria/menu`}
+            to={`/menu`}
             className="absolute right-0 m-4 text-white hover:text-green-400 transition duration-200"
           >
             <XCircle />
@@ -58,7 +58,7 @@ export function ItemPage() {
           <div>
             {width > 835 && (
               <Link
-                to={`/lanchonete-hamburgueria/menu`}
+                to={`/menu`}
                 className="hover:text-green-400 transition duration-200"
               >
                 <XCircle />

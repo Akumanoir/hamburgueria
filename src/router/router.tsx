@@ -7,30 +7,30 @@ import {
   Loader as shoppingCartLoader,
 } from "../pages/ShoppingCartPage.tsx";
 import { ErrorPage } from "../pages/ErrorPage.tsx";
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter, createBrowserRouter } from "react-router-dom";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
-    path: "/lanchonete-hamburgueria",
+    path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/lanchonete-hamburgueria",
+        path: "/",
         element: <HomePage />,
       },
       {
-        path: "/lanchonete-hamburgueria/menu",
+        path: "/menu",
         element: <MenuPage />,
         loader: menuLoader,
       },
       {
-        path: "/lanchonete-hamburgueria//menu/:id",
+        path: "/menu/:id",
         element: <ItemPage />,
         loader: itemLoader,
       },
       {
-        path: "/lanchonete-hamburgueria/ShoppingCart",
+        path: "/ShoppingCart",
         element: <ShoppingCartPage />,
         loader: shoppingCartLoader,
       },

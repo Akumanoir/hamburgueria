@@ -31,7 +31,7 @@ export function MenuPage() {
                 index: number
               ) => (
                 <Link
-                  to={`/lanchonete-hamburgueria/menu/${items.id}`}
+                  to={`/menu/${items.id}`}
                   key={index}
                 >
                   <MenuButton

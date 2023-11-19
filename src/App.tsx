@@ -24,7 +24,7 @@ export default function App() {
         <nav>
           <ul className="flex gap-3 items-center h-full">
             <li className="cursor-pointer" title="Início">
-              <Link to={`/lanchonete-hamburgueria`}>
+              <Link to={``}>
                 <Store />
               </Link>
             </li>
