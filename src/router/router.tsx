@@ -7,7 +7,7 @@ import {
   Loader as shoppingCartLoader,
 } from "../pages/ShoppingCartPage.tsx";
 import { ErrorPage } from "../pages/ErrorPage.tsx";
-import { createHashRouter, createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 
 export const router = createHashRouter([
   {
