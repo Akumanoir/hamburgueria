@@ -8,6 +8,19 @@ class ItemsController {
     return this.items;
   }
 
+  getPromotionItems() {
+    let itemsOnPromotion: any = []
+
+    this.items.map((items) => {
+      if (items.promotion === true) {
+        itemsOnPromotion.push(items)
+      }
+    })
+
+    return itemsOnPromotion
+
+  }
+
   getOneItem(id: number) {
     // const index = this.items.findIndex((item: { id: number }) => item.id === id);
     let item = this.items[id - 1];
