@@ -6,12 +6,8 @@ export function ErrorPage() {
   console.log(error);
 
   return (
-    <main>
-      <h1>Opa!</h1>
-      <p>Desculpe, um erro inexperado aconteceu</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+    <main className="w-screen h-screen bg-no-repeat bg-origin-border bg-center bg-black" style={{backgroundImage: `url(https://http.cat/${error.status})`}}>
+
     </main>
   )
 }
