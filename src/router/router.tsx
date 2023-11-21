@@ -9,6 +9,8 @@ import {
 import { ErrorPage } from "../pages/ErrorPage.tsx";
 import { createHashRouter } from "react-router-dom";
 
+// , Loader as itemsOnPromotionLoader
+
 export const router = createHashRouter([
   {
     path: "/",
