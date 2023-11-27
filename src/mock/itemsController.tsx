@@ -9,16 +9,15 @@ class ItemsController {
   }
 
   getPromotionItems() {
-    let itemsOnPromotion: any = []
+    let itemsOnPromotion: any = [];
 
     this.items.map((items) => {
       if (items.promotion === true) {
-        itemsOnPromotion.push(items)
+        itemsOnPromotion.push(items);
       }
-    })
+    });
 
-    return itemsOnPromotion
-
+    return itemsOnPromotion;
   }
 
   getOneItem(id: number) {

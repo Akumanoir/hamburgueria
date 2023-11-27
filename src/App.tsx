@@ -3,7 +3,6 @@ import { HeaderComponent } from "./components/HeaderComponent";
 import { FooterComponent as Footer } from "./components/FooterComponent";
 
 export default function App() {
-
   return (
     <>
       <HeaderComponent />

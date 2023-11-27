@@ -1,12 +1,12 @@
-import { itemsClass } from "../mock/itemsController"
-import { ItemWrapper } from "../components/ItemWrapper"
-import { Link } from "react-router-dom"
-import { MenuButton } from "../components/ButtonComponents"
+import { itemsClass } from "../mock/itemsController";
+import { ItemWrapper } from "../components/ItemWrapper";
+import { Link } from "react-router-dom";
+import { MenuButton } from "../components/ButtonComponents";
 
 export function HomePage() {
-  const itemsOnPromotion: any = itemsClass.getPromotionItems()
+  const itemsOnPromotion: any = itemsClass.getPromotionItems();
 
-  console.log(itemsOnPromotion)
+  console.log(itemsOnPromotion);
 
   return (
     <section className="max-w-3xl m-auto">
@@ -25,7 +25,7 @@ export function HomePage() {
             />
           </Link>
         ))}
-      </ ItemWrapper>
+      </ItemWrapper>
     </section>
   );
 }

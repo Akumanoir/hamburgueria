@@ -9,47 +9,43 @@ export function Loader() {
   return { menuItems };
 }
 
-
 export function MenuPage() {
   const { menuItems }: any = useLoaderData();
-  
+
   return (
-      <section className="max-w-3xl m-auto">
-        <div className="p-3">
-          <h2>Cardápio</h2>
-        </div>
-        <ItemWrapper>
-          {menuItems.length ? (
-            <>
-              {menuItems.map(
-                (
-                  items: {
-                    id: number;
-                    image: string;
-                    name: string;
-                    value: number;
-                  },
-                  index: number
-                ) => (
-                  <Link
-                    to={`/menu/${items.id}`}
-                    key={index}
-                  >
-                    <MenuButton
-                      className="hover:border-green-400"
-                      id={items.id}
-                      image={items.image}
-                      name={items.name}
-                      value={items.value}
-                    />
-                  </Link>
-                )
-              )}
-            </>
-          ) : (
-            <p>Desculpe, não temos nada disponível!</p>
-          )}
-        </ItemWrapper>
-      </section>
+    <section className="max-w-3xl m-auto">
+      <div className="p-3">
+        <h2>Cardápio</h2>
+      </div>
+      <ItemWrapper>
+        {menuItems.length ? (
+          <>
+            {menuItems.map(
+              (
+                items: {
+                  id: number;
+                  image: string;
+                  name: string;
+                  value: number;
+                },
+                index: number,
+              ) => (
+                <Link to={`/menu/${items.id}`} key={index}>
+                  <MenuButton
+                    className="hover:border-green-400"
+                    id={items.id}
+                    image={items.image}
+                    name={items.name}
+                    value={items.value}
+                  />
+                </Link>
+              ),
+            )}
+          </>
+        ) : (
+          <p>Desculpe, não temos nada disponível!</p>
+        )}
+      </ItemWrapper>
+    </section>
   );
 }

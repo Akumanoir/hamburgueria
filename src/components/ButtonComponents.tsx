@@ -13,7 +13,7 @@ export function ConfirmButton({ text, onAction, ...rest }: ConfirmButtonProps) {
       type="button"
       className={twMerge(
         "w-full border p-5 hover:bg-green-400 hover:text-white transition duration-200",
-        rest.className
+        rest.className,
       )}
       onClick={onAction}
     >
@@ -45,7 +45,7 @@ export function MenuButton({
       id={id.toString()}
       className={twMerge(
         "flex gap-2 border border-y-gray-200 h-24 border-x-transparent transition duration-200",
-        rest.className
+        rest.className,
       )}
     >
       <div className="w-52 h-full overflow-hidden">
