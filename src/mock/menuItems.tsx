@@ -64,7 +64,7 @@ export const menuItems = [
       "https://mfacdn.cachefly.net/chooseveg/sites/4/2019/03/Captura-de-Tela-2017-12-08-as-12.58.54.jpg",
     description: "Hambúrguer feito com o melhor feijão com beterraba",
     value: 19.99,
-    promotion: false,
+    promotion: true,
     promotionValue: 0,
   },
   {

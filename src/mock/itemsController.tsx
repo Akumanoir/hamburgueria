@@ -13,7 +13,7 @@ class ItemsController {
 
     this.items.map((items) => {
       if (items.promotion === true) {
-        itemsOnPromotion.push(items);
+        itemsOnPromotion.push({ ...items, promotionCalc: (items.promotionValue / 100) * items.value });
       }
     });
 
