@@ -13,7 +13,7 @@ export function InfoPage() {
         </p>
         <div className="min-w-[127px] h-[127px]">
           <img
-            src="/icon.png"
+            src="/lanchonete-hamburgueria/icon.png"
             alt="ícone de hamburguer"
             className="h-full w-full object-cover min-w-[127px]"
           />
@@ -50,7 +50,6 @@ export function InfoPage() {
         Agradecemos por escolher a Hamburgueria Vegana. Estamos ansiosos para
         servi-lo(a) em breve! 🌱🍔✨
       </p>
-      
     </section>
   );
 }
