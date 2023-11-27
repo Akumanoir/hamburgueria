@@ -20,7 +20,7 @@ export function ItemPage() {
 
   const mainHeight = () => {
     if (width < 825) {
-    return { height: "calc(100dvh - 6.125rem)" };
+    return { height: "calc(100dvh - 10.375rem)" };
   }
   }
 

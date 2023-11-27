@@ -6,6 +6,7 @@ import {
   ShoppingCartPage,
   Loader as shoppingCartLoader,
 } from "../pages/ShoppingCartPage.tsx";
+import { InfoPage } from "../pages/InfoPage.tsx";
 import { ErrorPage } from "../pages/ErrorPage.tsx";
 import { createHashRouter } from "react-router-dom";
 
@@ -34,6 +35,11 @@ export const router = createHashRouter([
       {
         path: "/ShoppingCart",
         element: <ShoppingCartPage />,
+        loader: shoppingCartLoader,
+      },
+      {
+        path: "/Info",
+        element: <InfoPage />,
         loader: shoppingCartLoader,
       },
     ],
