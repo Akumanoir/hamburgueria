@@ -1,8 +1,8 @@
 import { itemsClass } from "../mock/itemsController";
 import { useLoaderData } from "react-router-dom";
-import { MenuButton } from "../components/MenuButton";
-import { ConfirmButton } from "../components/ConfirmButton";
+import { ItemWrapper } from "../components/ItemWrapper";
 import { useEffect, useState } from "react";
+import { ConfirmButton, MenuButton } from "../components/ButtonComponents";
 
 export function Loader() {
   let shopCart = itemsClass.getShoppingCart();
@@ -49,7 +49,7 @@ export function ShoppingCartPage() {
           <div className="p-3">
             <h2>Carrinho</h2>
           </div>
-          <div className="flex flex-col gap-2 flex-grow overflow-y-auto">
+          <ItemWrapper>
             {items.map(
               (
                 item: {
@@ -71,7 +71,7 @@ export function ShoppingCartPage() {
                 />
               )
             )}
-          </div>
+          </ItemWrapper>
           <div className="p-3 grid gap-2">
             <p className="p-1">
               Total: <strong>R${itemsClass.getTotalValue()}</strong>

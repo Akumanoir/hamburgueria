@@ -1,6 +1,7 @@
 import { itemsClass } from "../mock/itemsController"
-import { MenuButton } from "../components/MenuButton"
+import { ItemWrapper } from "../components/ItemWrapper"
 import { Link } from "react-router-dom"
+import { MenuButton } from "../components/ButtonComponents"
 
 export function HomePage() {
   const itemsOnPromotion: any = itemsClass.getPromotionItems()
@@ -12,7 +13,7 @@ export function HomePage() {
       <div className="p-3">
         <h2>Promoção</h2>
       </div>
-      <div className="grid gap-2">
+      <ItemWrapper>
         {itemsOnPromotion.map((items: any) => (
           <Link to={`/menu/${items.id}`} key={items.name}>
             <MenuButton
@@ -24,7 +25,7 @@ export function HomePage() {
             />
           </Link>
         ))}
-      </div>
+      </ ItemWrapper>
     </section>
   );
 }

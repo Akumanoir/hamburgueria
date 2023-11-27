@@ -1,7 +1,8 @@
 // import { menuItems } from "../mock/menuItems"
 import { Link, useLoaderData } from "react-router-dom";
-import { MenuButton } from "../components/MenuButton";
 import { itemsClass } from "../mock/itemsController";
+import { ItemWrapper } from "../components/ItemWrapper";
+import { MenuButton } from "../components/ButtonComponents";
 
 export function Loader() {
   let menuItems = itemsClass.getItems();
@@ -17,7 +18,7 @@ export function MenuPage() {
         <div className="p-3">
           <h2>Cardápio</h2>
         </div>
-        <div className="grid gap-2">
+        <ItemWrapper>
           {menuItems.length ? (
             <>
               {menuItems.map(
@@ -48,7 +49,7 @@ export function MenuPage() {
           ) : (
             <p>Desculpe, não temos nada disponível!</p>
           )}
-        </div>
+        </ItemWrapper>
       </section>
   );
 }

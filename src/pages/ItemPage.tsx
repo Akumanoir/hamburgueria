@@ -2,7 +2,7 @@ import { useLoaderData, Link } from "react-router-dom";
 import { itemsClass } from "../mock/itemsController";
 import { XCircle } from "lucide-react";
 import { useEffect, useState } from "react";
-import { ConfirmButton } from "../components/ConfirmButton";
+import { ConfirmButton } from "../components/ButtonComponents";
 
 export function Loader({ params }: any) {
   let item = itemsClass.getOneItem(params.id);

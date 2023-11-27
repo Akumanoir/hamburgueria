@@ -1,6 +1,26 @@
-import { Trash } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 import { ButtonHTMLAttributes } from "react";
+import { Trash } from "lucide-react";
+
+interface ConfirmButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  text: string;
+  onAction?: () => void;
+}
+
+export function ConfirmButton({ text, onAction, ...rest }: ConfirmButtonProps) {
+  return (
+    <button
+      type="button"
+      className={twMerge(
+        "w-full border p-5 hover:bg-green-400 hover:text-white transition duration-200",
+        rest.className
+      )}
+      onClick={onAction}
+    >
+      {text}
+    </button>
+  );
+}
 
 interface MenuButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   id: any;
