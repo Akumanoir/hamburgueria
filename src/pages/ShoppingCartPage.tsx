@@ -21,10 +21,14 @@ export function ShoppingCartPage() {
     setItems(removedItems);
   };
 
+  console.log(items)
+
+  console.log(shopCart)
+
   return (
     <>
       {items.length ? (
-        <Section className="max-w-3xl m-auto flex flex-col" maxHeight>
+        <Section className="max-w-3xl m-auto flex flex-col">
           <div className="p-3">
             <h2>Carrinho</h2>
           </div>
@@ -36,6 +40,8 @@ export function ShoppingCartPage() {
                   image: string;
                   name: string;
                   value: number;
+                  promotion: boolean;
+                  promotionCalculation?: number;
                 },
                 index: number
               ) => (
@@ -45,6 +51,8 @@ export function ShoppingCartPage() {
                   image={item.image}
                   name={item.name}
                   value={item.value}
+                  promotion={item.promotion}
+                  promotionValue={item.promotionCalculation}
                   shoppingCart
                   onAction={() => deleteItemFromCartList(item.id)}
                 />

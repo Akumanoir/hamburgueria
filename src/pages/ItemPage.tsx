@@ -47,7 +47,18 @@ export function ItemPage() {
         )}
       </section>
       <section className="p-3 grid gap-3">
-        <strong className="block">R${item.value}</strong>
+        {item.promotion ? (
+          <div className="flex gap-2 items-baseline">
+            <s>R${item.value}</s>
+            <strong className="text-xl text-yellow-600">
+              R${item.promotionCalculation}
+            </strong>
+          </div>
+        ) : (
+          <span>
+            <strong className="block">R${item.value}</strong>
+          </span>
+        )}
         <ConfirmButton
           text="Adicionar ao carrinho"
           onAction={() =>
@@ -55,7 +66,9 @@ export function ItemPage() {
               item.id,
               item.image,
               item.name,
-              item.value
+              item.value,
+              item.promotion,
+              item.promotionCalculation
             )
           }
         />

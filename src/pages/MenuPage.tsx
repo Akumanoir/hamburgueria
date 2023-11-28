@@ -12,6 +12,8 @@ export function Loader() {
 export function MenuPage() {
   const { menuItems }: any = useLoaderData();
 
+  console.log(menuItems)
+
   return (
     <section className="max-w-3xl m-auto">
       <div className="p-3">
@@ -27,6 +29,8 @@ export function MenuPage() {
                   image: string;
                   name: string;
                   value: number;
+                  promotion: boolean;
+                  promotionCalculation?: number;
                 },
                 index: number,
               ) => (
@@ -37,6 +41,8 @@ export function MenuPage() {
                     image={items.image}
                     name={items.name}
                     value={items.value}
+                    promotion={items.promotion}
+                    promotionValue={items.promotionCalculation}
                   />
                 </Link>
               ),
