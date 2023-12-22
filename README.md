@@ -3,8 +3,8 @@
 <p align="center">Projeto para o curso gratuito de HTML e CSS do Senac</p>
 
 <p align="center">
-  <a href="#-projeto">Projeto</a> |
-  <a href="#-tecnologias">Tecnologias</a>
+  <a href="#projeto">Projeto</a> |
+  <a href="#tecnologias">Tecnologias</a>
 </p>
 
 <div>
