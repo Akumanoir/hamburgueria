@@ -6,13 +6,15 @@ export function HeaderComponent() {
     <header className="px-3 py-5 flex justify-between border-b-2 border-gray-200">
       <div className="flex items-center gap-2">
         <div className="w-14">
-          <img
-            src="/lanchonete-hamburgueria/icon.png"
-            alt="Ícone de um hamburguer"
-            className="object-cover w-full"
-          />
+          <Link to={``}>
+            <img
+              src="/hamburgueria/icon.png"
+              alt="Ícone de um hamburguer"
+              className="object-cover w-full"
+            />
+          </Link>
         </div>
-        <h1 className="font-bold">Hamburgueria vegana</h1>
+        <h1 className="font-bold">Hamburgueria</h1>
       </div>
       <nav>
         <ul className="flex gap-3 items-center h-full">
